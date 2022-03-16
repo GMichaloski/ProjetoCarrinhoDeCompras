@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Router, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './Routes/HomePage';
 import ShoppingCart from './Routes/ShoppingCart';
-import CartList from './Components/CartList';
+import cartStorage from './Services/cartStorage';
 
-export const shoppingCart = new CartList();
 export default function App() {
+  cartStorage();
   return (
     <div>
       <BrowserRouter>

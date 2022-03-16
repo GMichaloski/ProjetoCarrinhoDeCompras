@@ -12,12 +12,20 @@ import {
   NumberDecrementStepper,
 } from '@chakra-ui/react';
 import react from 'react';
+import { useState } from 'react/cjs/react.development';
 import numToBlr from '../Utils/numToBlr';
-import { shoppingCart } from '../App';
 export default function Fruits(props) {
   const { image, name, price, step, id } = props;
-  const { amount, setAmount } = react.useState('');
-  const handleChange = event => setAmount(event.target.value);
+  const [amount, setAmount] = useState(0);
+
+  const handleChange = event => {
+    console.log(event);
+
+    setAmount(event);
+  };
+  const handleClick = (fruit, value) => {
+    localStorage.setItem(fruit, JSON.stringify(value));
+  };
   return (
     <Box w="200px" h="300px" bg="#423E3B" padding="10px">
       <Image
@@ -31,7 +39,7 @@ export default function Fruits(props) {
       </Heading>
       <Text color="whiteAlpha.900">{numToBlr(price)}</Text>
       <HStack>
-        <Button onClick={shoppingCart.incrementValue(id, amount)}>🛒</Button>
+        <Button onClick={handleClick(id, amount)}>🛒</Button>
         <NumberInput
           color={'whiteAlpha.900'}
           defaultValue={1}

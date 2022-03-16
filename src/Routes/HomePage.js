@@ -28,33 +28,37 @@ export default function HomePage() {
       <body>
         <HStack spacing="30px" margin="50px">
           <Fruits
-            image="https://www.pngall.com/wp-content/uploads/2016/04/Banana-Free-Download-PNG.png"
-            name="Banana"
-            price={6}
-            step={0.1}
-          ></Fruits>
-          <Fruits
-            image="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Foto-Apple-Ma%C3%A7a-PNG.png"
-            name="Maçã"
-            price={3}
-            step={0.1}
-          ></Fruits>
-          <Fruits
-            image="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Laranja-PNG.png"
-            name="Laranja"
-            price={5.5}
-            step={0.1}
-          ></Fruits>
-          <Fruits
             image="https://baggiosupermercados.net.br/images/fb5efb5e-ab15-4256-a24e-2ac48db3fdf4.png"
             name="Abacate"
             price={5}
             id="abacate"
           ></Fruits>
           <Fruits
+            image="https://www.pngall.com/wp-content/uploads/2016/04/Banana-Free-Download-PNG.png"
+            name="Banana"
+            price={6}
+            step={0.1}
+            id="banana"
+          ></Fruits>
+          <Fruits
+            image="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Laranja-PNG.png"
+            name="Laranja"
+            price={5.5}
+            step={0.1}
+            id="laranja"
+          ></Fruits>
+          <Fruits
+            image="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Foto-Apple-Ma%C3%A7a-PNG.png"
+            name="Maçã"
+            price={3}
+            step={0.1}
+            id="maca"
+          ></Fruits>
+          <Fruits
             image="https://www.pngkit.com/png/full/205-2054773_manga-imagens-de-manga-png.png"
             name="Manga"
             price={6}
+            id="manga"
           ></Fruits>
         </HStack>
       </body>
