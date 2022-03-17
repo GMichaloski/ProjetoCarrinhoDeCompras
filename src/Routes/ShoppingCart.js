@@ -9,6 +9,7 @@ import {
   Heading,
   HStack,
 } from '@chakra-ui/react';
+import numToBlr from '../Utils/numToBlr';
 
 export default function ShoppingCart() {
   return (
@@ -33,6 +34,7 @@ export default function ShoppingCart() {
             priceTag="R$5,00/un"
             price={5}
             amount={0}
+            id={0}
           ></CartFruits>
           <CartFruits
             image="https://www.pngall.com/wp-content/uploads/2016/04/Banana-Free-Download-PNG.png"
@@ -40,6 +42,7 @@ export default function ShoppingCart() {
             priceTag="R$6,00/kg"
             price={6}
             amount={0}
+            id={1}
           ></CartFruits>
           <CartFruits
             image="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Laranja-PNG.png"
@@ -47,6 +50,7 @@ export default function ShoppingCart() {
             priceTag="R$5,50/kg"
             price={5.5}
             amount={0}
+            id={2}
           ></CartFruits>
           <CartFruits
             image="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Foto-Apple-Ma%C3%A7a-PNG.png"
@@ -54,6 +58,7 @@ export default function ShoppingCart() {
             priceTag="R$3,00/kg"
             price={3}
             amount={0}
+            id={3}
           ></CartFruits>
           <CartFruits
             image="https://www.pngkit.com/png/full/205-2054773_manga-imagens-de-manga-png.png"
@@ -61,13 +66,25 @@ export default function ShoppingCart() {
             priceTag="R$6,00/un"
             price={6}
             amount={0}
+            id={4}
           ></CartFruits>
         </HStack>
       </body>
       <footer>
         <Box bg="#FF2E00" w="100%" h="100px" padding="30px" marginTop="77px">
-          <HStack spacing="75%">
+          <HStack spacing="30%">
             <Text>Mercadin inc, todos os direitos reservados</Text>
+            <Text>
+              Valor Total:
+              {numToBlr(
+                localStorage.getItem(0) * 5 +
+                  localStorage.getItem(1) * 6 +
+                  localStorage.getItem(2) * 5.5 +
+                  localStorage.getItem(3) * 3 +
+                  localStorage.getItem(4) * 6
+              )}
+            </Text>
+            <Button w="170px">Finalizar Compra!</Button>
           </HStack>
         </Box>
       </footer>

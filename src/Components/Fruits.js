@@ -19,12 +19,10 @@ export default function Fruits(props) {
   const [amount, setAmount] = useState(0);
 
   const handleChange = event => {
-    console.log(event);
-
     setAmount(event);
   };
   const handleClick = (fruit, value) => {
-    localStorage.setItem(fruit, JSON.stringify(value));
+    localStorage.setItem(fruit, value);
   };
   return (
     <Box w="200px" h="300px" bg="#423E3B" padding="10px">
@@ -39,12 +37,12 @@ export default function Fruits(props) {
       </Heading>
       <Text color="whiteAlpha.900">{numToBlr(price)}</Text>
       <HStack>
-        <Button onClick={handleClick(id, amount)}>🛒</Button>
+        <Button onClick={() => handleClick(id, amount)}>🛒</Button>
         <NumberInput
           color={'whiteAlpha.900'}
           defaultValue={1}
           min={0.5}
-          max={3}
+          max={5}
           step={step}
           value={amount}
           onChange={handleChange}
